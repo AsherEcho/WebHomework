@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, age, gender) {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+          console.log(`我叫${this.name},今年${this.age}岁,是一名${this.gender}生。`);
+        }
+        exercise(name,age) {
+          console.log(`${this.age}岁的${this.name}正在锻炼身体。`);
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, gender) {
+          super(name, age, gender);
+          super.exercise()
+        }
+        study() {
+          console.log(`${this.name}正在学习Web前端框架`);
+        }
+        exam() {
+          console.log(`${this.name}正在考试，科目为Web前端框架`);
+        }
+      }
+      const asher = new Student("Asher", "21", "男");
+      asher.study();
+      asher.exam();
+    </script>
+  </body>
+</html>
